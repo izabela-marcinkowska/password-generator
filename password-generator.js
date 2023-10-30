@@ -15,5 +15,37 @@ const getRandomCharacters = (amountCharacters, charactersArray) => {
   }
   return passwordLetters;
 };
-console.log(getRandomCharacters(10, numbers));
-export function passwordGenerator() {}
+
+export function passwordGenerator(
+  amountCharacters,
+  useLetters,
+  useNumbers,
+  useSpecial
+) {
+  let passwordLetters = [];
+
+  if (useLetters) {
+    passwordLetters.push(
+      getRandomCharacters(amountCharacters, uppercaseLetters)
+    );
+    passwordLetters.push(
+      getRandomCharacters(amountCharacters, lowercaseLetters)
+    );
+  }
+  if (useNumbers) {
+    passwordLetters.push(getRandomCharacters(amountCharacters, numbers));
+  }
+  if (useSpecial) {
+    passwordLetters.push(getRandomCharacters(amountCharacters, specialSigns));
+  }
+
+  // console.log("thats password letters", passwordLetters);
+  let newCon = passwordLetters.flat();
+  // console.log("concat", newCon);
+
+  const password = getRandomCharacters(amountCharacters, newCon).join("");
+
+  return password;
+}
+
+console.log("Password is:", passwordGenerator(20, true, true, false));
