@@ -1,19 +1,33 @@
-# password-generator
-This is my project for a password generator. You will have two sorts of passwords to choose from. 
+# Password Generator
 
-## Random password 
-Random way will generate a password in random order, always starting with a letter. You will have to input:
-##### Amount letters 
-You can choose between 8 to 25 letters. If you leave this choice empty password will generate 10 characters.
+This project features a robust password generator that provides users with two distinct styles of passwords, ensuring versatility and security for various user needs.
 
-##### Letters
-If you choose letters option password will include random capitals and lowercase letters. You cannot choose only capitals or only lowercase. 
+## Features
 
-##### Numbers
-If you choose numbers option random numbers between 0 and 9 will be randomly added to the password. 
+With this password generator, users can create passwords that are both secure and customized to their preferences. The generator offers the following features:
 
-##### Special signs 
-If you choose special signs option you will get all allowed ASCII signs added to the password. To match the rules of the most sites, we will not start password with a special sign. 
+### Random Passwords
 
-## Dash-separated password 
-You will have option to choose password written with the dash-separted way. It means that password will include letters, numbers and signs and they will evanly separated by dashes. 
+The `Random` mode crafts passwords in a non-sequential arrangement, always initiating with an alphabetical character. Users can fine-tune the following settings:
+
+#### Length
+- **Default**: 10 characters
+- **Options**: Anywhere from 8 to 25 characters. Leaving this field blank defaults to a 10-character password.
+
+#### Character Types
+- **Letters**: Passwords will include a mix of random uppercase and lowercase letters. Exclusive selection of either case is not available.
+- **Numbers**: Includes random numbers ranging from 0 to 9 interspersed within the password.
+- **Special Characters**: Incorporates all permissible ASCII symbols, ensuring the first character is not a special symbol to comply with most website requirements.
+
+### Dash-Separated Passwords
+
+The `Dash-Separated` mode generates passwords that are segmented by dashes, evenly interspersing letters, numbers, and special characters for readability and memorability.
+
+## Getting Started
+
+To generate a password:
+
+1. Choose the desired password style: `Random` or `Dash-Separated`.
+2. Specify the password length (8 to 25 characters).
+3. Select the types of characters to include (letters, numbers, and/or special characters).
+4. Generate your password.
