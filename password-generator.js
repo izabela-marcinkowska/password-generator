@@ -47,5 +47,3 @@ export function passwordGenerator(
 
   return password;
 }
-
-console.log("Password is:", passwordGenerator(20, true, true, false));
