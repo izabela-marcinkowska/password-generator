@@ -2,7 +2,7 @@ import {
   specialSigns,
   uppercaseLetters,
   lowercaseLetters,
-  numbers,
+  numbersArray,
 } from "./src/data.js";
 
 const getRandomCharacters = (amountCharacters, charactersArray) => {
@@ -16,15 +16,12 @@ const getRandomCharacters = (amountCharacters, charactersArray) => {
   return passwordLetters;
 };
 
-export function passwordGenerator(
-  amountCharacters,
-  useLetters,
-  useNumbers,
-  useSpecial
-) {
+export function passwordGenerator(amountCharacters, settings) {
   let passwordLetters = [];
+  const { letters, numbers, signs } = settings;
+  console.log("Inner settings are:", letters, numbers, signs);
 
-  if (useLetters) {
+  if (letters) {
     passwordLetters.push(
       getRandomCharacters(amountCharacters, uppercaseLetters)
     );
@@ -32,18 +29,25 @@ export function passwordGenerator(
       getRandomCharacters(amountCharacters, lowercaseLetters)
     );
   }
-  if (useNumbers) {
-    passwordLetters.push(getRandomCharacters(amountCharacters, numbers));
+  if (numbers) {
+    passwordLetters.push(getRandomCharacters(amountCharacters, numbersArray));
   }
-  if (useSpecial) {
+  if (signs) {
     passwordLetters.push(getRandomCharacters(amountCharacters, specialSigns));
   }
 
   // console.log("thats password letters", passwordLetters);
   let newCon = passwordLetters.flat();
   // console.log("concat", newCon);
+  let password = getRandomCharacters(amountCharacters, newCon).join("");
+  const startsWithSign = (password) =>
+    specialSigns.some((sign) => password.startsWith(sign));
 
-  const password = getRandomCharacters(amountCharacters, newCon).join("");
+  console.log("Does it starts with a sign?", startsWithSign(password));
+  while (startsWithSign(password)) {
+    console.log("It was a sign");
+    password = getRandomCharacters(amountCharacters, newCon).join("");
+  }
 
   return password;
 }

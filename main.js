@@ -10,8 +10,27 @@ const getAmountChar = () => {
   return parsedNr;
 };
 
+const getSettings = () => {
+  const checkedBoxLetters = document.querySelector("#letters").checked;
+  const checkedBoxNumbers = document.querySelector("#numbers").checked;
+  const checkedBoxSigns = document.querySelector("#signs").checked;
+  console.log(
+    "The settings are:",
+    checkedBoxLetters,
+    checkedBoxNumbers,
+    checkedBoxSigns
+  );
+  return {
+    letters: checkedBoxLetters,
+    numbers: checkedBoxNumbers,
+    signs: checkedBoxSigns,
+  };
+};
+
 resultButton.addEventListener("click", () => {
+  const settings = getSettings();
+  console.log("The settings", settings);
   const amountChar = getAmountChar();
-  resultParagraph.innerText = passwordGenerator(20, true, false, true);
+  resultParagraph.innerText = passwordGenerator(amountChar, settings);
   console.log("amount characters is:", amountChar);
 });
