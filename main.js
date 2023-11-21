@@ -28,7 +28,8 @@ const getSettings = () => {
   };
 };
 
-resultButton.addEventListener("click", () => {
+resultButton.addEventListener("click", (event) => {
+  event.preventDefault();
   const settings = getSettings();
   console.log("The settings", settings);
   const amountChar = getAmountChar();
@@ -38,8 +39,18 @@ resultButton.addEventListener("click", () => {
 
 form.addEventListener("change", () => {
   const settings = getSettings();
+  const onlySignSet = () => {
+    if (settings.signs && !settings.letters && !settings.numbers) {
+      return true;
+    }
+  };
+  const nothingSet = () => {
+    if (!settings.signs && !settings.letters && !settings.numbers) {
+      return true;
+    }
+  };
   resultButton.disabled = false;
-  if (settings.signs && !settings.letters && !settings.numbers) {
+  if (onlySignSet() || nothingSet()) {
     resultButton.disabled = true;
   }
 });
