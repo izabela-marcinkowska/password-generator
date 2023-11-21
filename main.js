@@ -3,6 +3,7 @@ import { passwordGenerator } from "./password-generator";
 
 const resultParagraph = document.getElementById("result-window");
 const resultButton = document.getElementById("result-button");
+const form = document.getElementById("form");
 
 const getAmountChar = () => {
   const numChar = document.getElementById("amount").value;
@@ -33,4 +34,12 @@ resultButton.addEventListener("click", () => {
   const amountChar = getAmountChar();
   resultParagraph.innerText = passwordGenerator(amountChar, settings);
   console.log("amount characters is:", amountChar);
+});
+
+form.addEventListener("change", () => {
+  const settings = getSettings();
+  resultButton.disabled = false;
+  if (settings.signs && !settings.letters && !settings.numbers) {
+    resultButton.disabled = true;
+  }
 });

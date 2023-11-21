@@ -11,35 +11,37 @@
       <h1>Password Generator</h1>
     </header>
     <main>
-      <fieldset>
-        <legend>Choose your settings:</legend>
-        <div>
-          <input
-            type="number"
-            id="amount"
-            name="amount"
-            value="10"
-            min="8"
-            max="25"
-          />
-        </div>
+      <form id="form">
+        <fieldset>
+          <legend>Choose your settings:</legend>
+          <div>
+            <input
+              type="number"
+              id="amount"
+              name="amount"
+              value="10"
+              min="8"
+              max="25"
+            />
+          </div>
 
-        <div>
-          <input type="checkbox" id="letters" name="letters" checked />
-          <label for="letters">Letters</label>
-        </div>
+          <div>
+            <input type="checkbox" id="letters" name="letters" checked />
+            <label for="letters">Letters</label>
+          </div>
 
-        <div>
-          <input type="checkbox" id="numbers" name="numbers" />
-          <label for="numbers">Numbers</label>
-        </div>
+          <div>
+            <input type="checkbox" id="numbers" name="numbers" />
+            <label for="numbers">Numbers</label>
+          </div>
 
-        <div>
-          <input type="checkbox" id="signs" name="signs" />
-          <label for="signs">Signs</label>
-        </div>
-      </fieldset>
-      <button id="result-button">Result</button>
+          <div>
+            <input type="checkbox" id="signs" name="signs" />
+            <label for="signs">Signs</label>
+          </div>
+        </fieldset>
+        <button id="result-button">Result</button>
+      </form>
       <p id="result-window"></p>
     </main>
   </body>
