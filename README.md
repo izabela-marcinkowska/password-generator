@@ -11,13 +11,15 @@ With this password generator, users can create passwords that are both secure an
 The `Random` mode crafts passwords in a non-sequential arrangement, always initiating with an alphabetical character. Users can fine-tune the following settings:
 
 #### Length
+
 - **Default**: 10 characters
 - **Options**: Anywhere from 8 to 25 characters. Leaving this field blank defaults to a 10-character password.
 
 #### Character Types
+
 - **Letters**: Passwords will include a mix of random uppercase and lowercase letters. Exclusive selection of either case is not available.
 - **Numbers**: Includes random numbers ranging from 0 to 9 interspersed within the password.
-- **Special Characters**: Incorporates all permissible ASCII symbols, ensuring the first character is not a special symbol to comply with most website requirements.
+- **Special Characters**: Incorporates all permissible ASCII symbols, ensuring the first character is not a special symbol to comply with most website requirements. Cannot be chosen alone. Needs to be together with another option.
 
 ### Dash-Separated Passwords
 
