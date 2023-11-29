@@ -4,45 +4,54 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Password Generator</title>
   </head>
   <body>
     <header>
-      <h1>Password Generator</h1>
+      <h1 class="header-title">Password Generator</h1>
     </header>
     <main>
-      <form id="form">
-        <fieldset>
-          <legend>Choose your settings:</legend>
-          <div>
-            <input
-              type="number"
-              id="amount"
-              name="amount"
-              value="10"
-              min="8"
-              max="25"
-            />
-          </div>
+      <form id="form" class="password-form">
+        <legend>Choose your settings:</legend>
+        <div>
+          <input
+            type="number"
+            id="amount"
+            name="amount"
+            value="10"
+            min="8"
+            max="25"
+          />
+        </div>
 
-          <div>
-            <input type="checkbox" id="letters" name="letters" checked />
-            <label for="letters">Letters</label>
-          </div>
+        <div>
+          <input type="checkbox" id="letters" name="letters" checked />
+          <label for="letters">Letters</label>
+        </div>
 
-          <div>
-            <input type="checkbox" id="numbers" name="numbers" />
-            <label for="numbers">Numbers</label>
-          </div>
+        <div>
+          <input type="checkbox" id="numbers" name="numbers" />
+          <label for="numbers">Numbers</label>
+        </div>
 
-          <div>
-            <input type="checkbox" id="signs" name="signs" />
-            <label for="signs">Signs</label>
-          </div>
-        </fieldset>
+        <div>
+          <input type="checkbox" id="signs" name="signs" />
+          <label for="signs">Signs</label>
+        </div>
+
         <button id="result-button">Result</button>
       </form>
-      <p id="result-window"></p>
+      <input id="result-window" disabled></input>
+      <button id="btn">Copy!</button>
     </main>
   </body>
   <script src="./main.js" type="module"></script>

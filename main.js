@@ -1,9 +1,10 @@
 import "./style.css";
 import { passwordGenerator } from "./password-generator";
 
-const resultParagraph = document.getElementById("result-window");
+const resultOutput = document.getElementById("result-window");
 const resultButton = document.getElementById("result-button");
 const form = document.getElementById("form");
+const btn = document.getElementById("btn");
 
 const getAmountChar = () => {
   const numChar = document.getElementById("amount").value;
@@ -31,10 +32,8 @@ const getSettings = () => {
 resultButton.addEventListener("click", (event) => {
   event.preventDefault();
   const settings = getSettings();
-  console.log("The settings", settings);
   const amountChar = getAmountChar();
-  resultParagraph.innerText = passwordGenerator(amountChar, settings);
-  console.log("amount characters is:", amountChar);
+  resultOutput.value = passwordGenerator(amountChar, settings);
 });
 
 form.addEventListener("change", () => {
@@ -53,4 +52,17 @@ form.addEventListener("change", () => {
   if (onlySignSet() || nothingSet()) {
     resultButton.disabled = true;
   }
+});
+
+const copyContent = async () => {
+  try {
+    await navigator.clipboard.writeText(resultOutput.value);
+    console.log("Content copied to clipboard");
+  } catch (err) {
+    console.error("Failed to copy: ", err);
+  }
+};
+
+btn.addEventListener("click", () => {
+  copyContent();
 });
