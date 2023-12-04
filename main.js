@@ -1,4 +1,3 @@
-import "./style.css";
 import { passwordGenerator } from "./password-generator";
 
 const resultOutput = document.getElementById("result-window");

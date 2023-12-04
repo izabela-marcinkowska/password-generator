@@ -7,22 +7,26 @@
     <link href="/dist/output.css" rel="stylesheet">
     <title>Password Generator</title>
   </head>
-  <body>
+  <body class="font-serif bg-middle-blue text-center h-screen flex flex-col items-center justify-center">
     <header>
-      <h1 class="header-title text-3xl font-bold underline">Password Generator</h1>
+      <h1 class="header-title text-4xl mb-5">Password Generator</h1>
     </header>
-    <main>
+    <main class="flex flex-col text-lg">
       <form id="form" class="password-form">
-        <legend>Choose your settings:</legend>
+        <legend class="mb-2 tex-lg">Choose your settings:</legend>
         <div>
-          <input
-            type="number"
-            id="amount"
-            name="amount"
-            value="10"
-            min="8"
-            max="25"
-          />
+          <div class="relative mb-4">
+            <input
+              type="number"
+              id="amount"
+              name="amount"
+              value="10"
+              min="8"
+              max="25"
+              placeholder="Enter amount"
+              class="form-input text-l text-center px-4 py-2 w-full rounded-lg border-2 border-gray-300 shadow-inner focus:shadow-outline focus:border-indigo-500 focus:outline-none transition ease-in-out duration-150"
+            />
+          </div>
         </div>
 
         <div>
@@ -42,7 +46,7 @@
 
         <button id="result-button">Result</button>
       </form>
-      <input id="result-window" disabled></input>
+      <input id="result-window" class="text-center" disabled></input>
       <button id="btn">Copy!</button>
     </main>
   </body>
