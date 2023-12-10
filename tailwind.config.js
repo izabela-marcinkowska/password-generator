@@ -7,7 +7,7 @@ export default {
       serif: ["Menlo", "sans-serif"],
     },
     colors: {
-      red: "#E63946",
+      success: "#E63946",
       white: "#F1FAEE",
       "light-blue": "#A8DADC",
       "middle-blue": "#457B9D",
